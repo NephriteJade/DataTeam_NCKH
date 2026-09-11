@@ -1,7 +1,7 @@
 # config.py
 import os
 
-BASE_DIR = r"D:\NCKH_DATATEAM\676_P\676_P"   # ← Sửa thành dòng này
+BASE_DIR = r"D:\NCKH_DATATEAM"   # ← Sửa thành dòng này
 
 print(f"DEBUG - BASE_DIR = {BASE_DIR}")
 
