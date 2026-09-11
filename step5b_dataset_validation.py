@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-BASE_DIR = "/Applications/NCKH_DATATEAM"
+BASE_DIR = r"D"\NCKH_DATATEAM"
 INPUT_PATH = os.path.join(
     BASE_DIR,
     "processed",
