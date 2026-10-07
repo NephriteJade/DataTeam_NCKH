@@ -1,27 +1,17 @@
-# config.py
 import os
+from pathlib import Path
 
-BASE_DIR = r"D:\NCKH_DATATEAM"   # ← Sửa thành dòng này
+# Đường dẫn gốc dự án
+BASE_DIR = Path(r"D:\NCKH_DATATEAM").resolve()
 
-print(f"DEBUG - BASE_DIR = {BASE_DIR}")
+# Cấu hình các đường dẫn con
+DATASET_DIR = BASE_DIR / "dataset" / "E-DAIC"
+LABELS_DIR = BASE_DIR / "labels"
+PROCESSED_DIR = BASE_DIR / "processed"
 
-DATASETS = {
-    "E-DAIC": {
-        "path": os.path.join(BASE_DIR, "dataset", "E-DAIC"),
-        "description": "Extended DAIC-WOZ"
-    },
-    "Vietnam": {
-        "path": os.path.join(BASE_DIR, "dataset", "Vietnam"),
-        "description": "Dữ liệu Việt Nam"
-    },
-    "Japan": {
-        "path": os.path.join(BASE_DIR, "dataset", "Japan"),
-        "description": "Dữ liệu Nhật Bản"
-    }
-}
+# Đảm bảo các thư mục đầu ra tồn tại
+PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
-# Debug
 if __name__ == "__main__":
-    for name, info in DATASETS.items():
-        print(f"DEBUG {name} path: {info['path']}")
-        print(f"DEBUG Exists? {os.path.exists(info['path'])}")
+    print(f"BASE_DIR: {BASE_DIR}")
+    print(f"DATASET_DIR: {DATASET_DIR} (Exists: {DATASET_DIR.exists()})")
